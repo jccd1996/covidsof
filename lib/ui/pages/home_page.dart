@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import 'countries_page.dart';
 import 'local_info_page.dart';
@@ -22,8 +23,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData(
-        fontFamily: 'Raleway',
-      ),
+          textTheme: GoogleFonts.ralewayTextTheme(Theme.of(context).textTheme)),
       home: Scaffold(
         backgroundColor: Colors.orange[800],
         body: IndexedStack(
@@ -32,7 +32,9 @@ class _HomePageState extends State<HomePage> {
         ),
         bottomNavigationBar: BottomNavigationBar(
           currentIndex: currentPage,
-          onTap: _onItemTapped,
+          onTap: (page) {
+            _onItemTapped(page);
+          },
           backgroundColor: Colors.grey[300],
           selectedItemColor: Colors.orange[800],
           items: [

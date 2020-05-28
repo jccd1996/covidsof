@@ -41,11 +41,8 @@ class _CountryDetailState extends State<CountryDetail> {
               child: CircleAvatar(
                 radius: 50.0,
                 child: ClipOval(
-                  child: Flags.getFlag(
-                      country: widget.country.countryCode,
-                      height: 100,
-                      width: 100,
-                      fit: BoxFit.fill),
+                  child: Flag(widget.country.countryCode,
+                      height: 100, width: 100, fit: BoxFit.fill),
                 ),
               ),
             ),
